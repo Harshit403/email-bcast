@@ -48,7 +48,8 @@ SMTP_PASSWORD = os.getenv("SMTP_PASSWORD", "smtppassword")
 redis_pool = redis.ConnectionPool.from_url(
     REDIS_URL,
     password=REDIS_PASSWORD,
-    decode_responses=True
+    decode_responses=True,
+    ssl=True
 )
 redis_conn = redis.Redis(connection_pool=redis_pool)
 
